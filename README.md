@@ -4,7 +4,8 @@ public class SortingAlgo{
     public void bubbleSort(int array[]){
     for(int i=0;i<array.length;i++)
     {
-        for(int j=i+1;j<array.length;j++){
+        for(int j=i+1;j<array.length;j++)
+        {
             if(array[j]<array[i])
             {
                 int temp=array[i];
@@ -12,6 +13,12 @@ public class SortingAlgo{
                 array[j]=temp;
             }
         }
+        for(int k=0;k<array.length;k++)
+        {
+        System.out.print(array[k]+" ");
+        }
+        System.out.println();
+        
     }
     }
     //*******************selection sort method*******************************
@@ -20,20 +27,46 @@ public class SortingAlgo{
      for(int i=0;i<array.length-1;i++)
        {
         int indx=i;
-        for(int j=i+1;j<array.length;j++){
-            if(array[j]<array[indx]){
+        for(int j=i+1;j<array.length;j++)
+        {
+            if(array[j]<array[indx])
+            {
                 indx=j;
             }
         }
         int temp=array[i];
          array[i]=array[indx];
          array[indx]=temp;
-        for(int k=0;k<array.length;k++){
+        for(int k=0;k<array.length;k++)
+        {
         System.out.print(array[k]+" ");
         }
         System.out.println();
         }
     }   
+    public void insertionSort(int array[])
+    {
+        for(int i=1;i<array.length;i++)
+        {
+            int key=array[i];
+            int j=i-1;
+            
+            while(j>=0 && key<array[j])
+            {
+                
+                array[j+1]=array[j];
+                j--;
+                
+                
+            }
+            array[j+1]=key;
+            for(int k=0;k<array.length;k++)
+            {
+             System.out.print(array[k]+" ");
+            }
+            System.out.println();
+          }
+    }
     // code driver start here
     public static void main(String args[]){
         SortingAlgo sa=new SortingAlgo();
@@ -68,10 +101,10 @@ public class SortingAlgo{
             case 2:
                 sa.selectionSort(array); //it invoke selectionSort() method 
                 break;
-           /* case 3:
+            case 3:
                 sa.insertionSort(array);  //it invoke insertionSort() method
                 break;
-            case 4:
+           /* case 4:
                 sa.quickSort(array);      //it invoke quickSort() method 
                 break;
             case 5:
